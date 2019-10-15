@@ -1,0 +1,75 @@
+GLPSOL: GLPK LP/MIP Solver, v4.65
+Parameter(s) specified in the command line:
+ -m pc1_p2.glpk
+Reading model section from pc1_p2.glpk...
+Reading data section from pc1_p2.glpk...
+47 lines were read
+Generating obj...
+Generating balance...
+Generating capacity...
+Model has been successfully generated
+GLPK Integer Optimizer, v4.65
+43 rows, 37 columns, 99 non-zeros
+36 integer variables, none of which are binary
+Preprocessing...
+6 rows, 10 columns, 20 non-zeros
+9 integer variables, none of which are binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  1.000e+00  ratio =  1.000e+00
+Problem data seem to be well scaled
+Constructing initial basis...
+Size of triangular part is 5
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.65
+6 rows, 10 columns, 20 non-zeros
+*     0: obj =  -0.000000000e+00 inf =   0.000e+00 (2)
+*     5: obj =   1.500000000e+01 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
+Long-step dual simplex will be used
++     5: mip =     not found yet <=              +inf        (1; 0)
++     5: >>>>>   1.500000000e+01 <=   1.500000000e+01   0.0% (1; 0)
++     5: mip =   1.500000000e+01 <=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+Time used:   0.0 secs
+Memory used: 0.2 Mb (190934 bytes)
+Display statement at line 29
+x[A,A].val = 0
+x[A,B].val = 9
+x[A,C].val = 6
+x[A,D].val = 0
+x[A,E].val = 0
+x[A,F].val = 0
+x[B,A].val = 0
+x[B,B].val = 0
+x[B,C].val = 0
+x[B,D].val = 7
+x[B,E].val = 2
+x[B,F].val = 0
+x[C,A].val = 0
+x[C,B].val = 0
+x[C,C].val = 0
+x[C,D].val = 0
+x[C,E].val = 6
+x[C,F].val = 0
+x[D,A].val = 0
+x[D,B].val = 0
+x[D,C].val = 0
+x[D,D].val = 0
+x[D,E].val = 1
+x[D,F].val = 6
+x[E,A].val = 0
+x[E,B].val = 0
+x[E,C].val = 0
+x[E,D].val = 0
+x[E,E].val = 0
+x[E,F].val = 9
+x[F,A].val = 0
+x[F,B].val = 0
+x[F,C].val = 0
+x[F,D].val = 0
+x[F,E].val = 0
+x[F,F].val = 0
+Display statement at line 30
+flow.val = 15
+Model has been successfully processed

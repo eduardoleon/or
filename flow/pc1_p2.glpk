@@ -1,0 +1,47 @@
+set V;
+set E;
+
+/* source and target vertices */
+param s, symbolic, in V;
+param t, symbolic, in V;
+
+/* edge capacity, zero if edge does not exist */
+param c{i in V, j in V};
+
+/* actual flow through edge */
+var x{i in V, j in V}, integer, >= 0;
+
+/* total flow */
+var flow, >= 0;
+
+maximize obj: flow;
+
+/* mass balance of flow through vertex */
+s.t. balance{j in V}:
+     sum{i in V} x[i,j] + (if j = s then flow) =
+     sum{k in V} x[j,k] + (if j = t then flow);
+
+/* flow constrained by edge capacity */
+s.t. capacity{i in V, j in V}: x[i,j] <= c[i,j];
+
+solve;
+
+display{i in V, j in V} x[i,j];
+display flow;
+
+data;
+
+set V := A B C D E F;
+
+param s := A;
+param t := F;
+
+param c : A B C D E F :=
+      A   0 9 7 0 0 0
+      B   0 0 0 7 2 0
+      C   0 0 0 4 6 0
+      D   0 0 0 0 3 6
+      E   0 0 0 0 0 9
+      F   0 0 0 0 0 0;
+
+end;
